@@ -18,8 +18,6 @@ MVP för ett webbaserat verktyg som hjälper till att administrera projekt, akti
    npm run dev
    ```
    Öppna sedan [http://localhost:5173](http://localhost:5173) i din webbläsare.
-   - I GitHub Codespaces/remote-IDE: använd den genererade URL:en för port 5173, t.ex.
-     `https://<ditt-codespace>-5173.app.github.dev/` (som `https://upgraded-engine-p6r9x5q9g99frxr4-5173.app.github.dev/`).
 
 ### Rekommenderad datamodell i Supabase
 
