@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portföljkollen.se – Inloggning</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          sans-serif;
+        background: radial-gradient(circle at 20% 20%, #f6f7fb, #e9edff 25%, #e7f3ff 55%, #f6f7fb);
+        min-height: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #0b1021 0%, #131a36 50%, #0b1021 100%);
+        color: #0b1021;
+      }
+
+      .login-shell {
+        width: min(960px, 92vw);
+        margin: 48px auto;
+        background: #ffffffea;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 24px 70px rgba(5, 10, 45, 0.2);
+        border-radius: 24px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+
+      .login-aside {
+        background: radial-gradient(circle at 20% 20%, #1f2a5f, #111836 60%, #0b1021);
+        color: #e9edff;
+        padding: 48px;
+        display: grid;
+        gap: 16px;
+        align-content: center;
+      }
+
+      .login-aside h1 {
+        margin: 0;
+        font-size: 28px;
+        letter-spacing: -0.02em;
+      }
+
+      .login-aside p {
+        margin: 0;
+        color: #cfd7ff;
+        line-height: 1.6;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #e5edff;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        width: fit-content;
+      }
+
+      .pill svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .login-main {
+        padding: 48px 56px;
+        background: #f7f8fb;
+      }
+
+      .login-main h2 {
+        margin: 0 0 8px;
+        font-size: 24px;
+        color: #0b1021;
+        letter-spacing: -0.01em;
+      }
+
+      .login-main p {
+        margin: 0 0 24px;
+        color: #4b587c;
+        line-height: 1.5;
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+      }
+
+      label {
+        font-weight: 600;
+        color: #121a33;
+        font-size: 14px;
+      }
+
+      input[type='text'],
+      input[type='password'] {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid #d9deed;
+        background: #fff;
+        font-size: 15px;
+        color: #0b1021;
+        transition: border 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      input[type='text']:focus,
+      input[type='password']:focus {
+        outline: none;
+        border-color: #4e7bff;
+        box-shadow: 0 0 0 3px rgba(78, 123, 255, 0.2);
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .actions a {
+        font-weight: 600;
+        color: #4e7bff;
+        text-decoration: none;
+      }
+
+      button[type='submit'] {
+        width: 100%;
+        padding: 14px 16px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(120deg, #4e7bff, #7c5dff);
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(78, 123, 255, 0.35);
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+      }
+
+      button[type='submit']:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 36px rgba(78, 123, 255, 0.45);
+      }
+
+      button[type='submit']:active {
+        transform: translateY(0);
+      }
+
+      .meta-row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        color: #4b587c;
+        font-size: 14px;
+      }
+
+      .badge {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #e6ecff;
+        color: #1f2a5f;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      footer {
+        margin-top: 12px;
+        color: #7b88a8;
+        font-size: 12px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-shell" aria-labelledby="login-heading">
+      <aside class="login-aside">
+        <div class="pill" aria-label="Portföljkollen.se">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M4 12.5 9.5 18 20 6"
+              stroke="#9fdcff"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          portfoljkollen.se
+        </div>
+        <h1 id="login-heading">Projektportföljen på ett ställe</h1>
+        <p>
+          Logga in för att hantera projekt, aktiviteter, beslutspunkter och beroenden i
+          portföljen. Säkra beslut och tydlig status – samlat för hela organisationen.
+        </p>
+        <p class="meta-row">
+          <span class="badge">MVP</span>
+          Direktkopplat till Supabase-auth och portföljdatan.
+        </p>
+      </aside>
+      <main class="login-main">
+        <h2>Logga in</h2>
+        <p>Ange användarnamn och lösenord för Portföljkollen.</p>
+        <form>
+          <div>
+            <label for="username">Användarnamn</label>
+            <input id="username" name="username" type="text" autocomplete="username" required />
+          </div>
+          <div>
+            <label for="password">Lösenord</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <div class="actions">
+            <a href="#">Glömt lösenord?</a>
+          </div>
+          <button type="submit">Logga in</button>
+        </form>
+        <footer>Behöver du ett konto? Kontakta din administratör för Portföljkollen.</footer>
+      </main>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
